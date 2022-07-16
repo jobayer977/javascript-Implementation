@@ -7,6 +7,7 @@
   - [Array Prototype filter](#array-prototype-filter)
   - [Array Prototype find](#array-prototype-find)
   - [Array Prototype findLast](#array-prototype-findLast)
+  - [Array Prototype flat](#array-prototype-flat)
 ## Array Prototype at
 ```
 const peoples = [
@@ -179,6 +180,23 @@ Array.prototype.findLastImpl = function (callback) {
 		index--
 	}
 	return undefined
+}
+
+```
+## Array Prototype flat
+```
+const arr1 = [0, 1, 2, [3, 4]]
+Array.prototype.flatImpl = function (depth = 1) {
+	const result = []
+	for (let i = 0; i < this.length; i++) {
+		const item = this[i]
+		if (Array.isArray(item)) {
+			result.push(...item.flatImpl(depth - 1))
+		} else {
+			result.push(item)
+		}
+	}
+	return result
 }
 
 ```
