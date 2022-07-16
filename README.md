@@ -16,37 +16,12 @@
   - [Array Prototype map](#array-prototype-map)
 ## Array Prototype at
 ```
-const peoples = [
-	{ name: 'John', age: 20 },
-	{ name: 'Jane', age: 21 },
-	{ name: 'Bob', age: 22 },
-	{ name: 'Mary', age: 23 },
-	{ name: 'Peter', age: 24 },
-	{ name: 'Alice', age: 25 },
-	{ name: 'Sam', age: 26 },
-	{ name: 'Max', age: 27 },
-	{ name: 'Kate', age: 28 },
-]
 Array.prototype.atImpl = function (index) {
 	return this[index]
-}
-const At = (array, index) => {
-	return array[index]
 }
 ```
 ## Array Prototype concat
 ```
-const peoples = [
-	{ name: 'John', age: 20 },
-	{ name: 'Jane', age: 21 },
-	{ name: 'Bob', age: 22 },
-	{ name: 'Mary', age: 23 },
-	{ name: 'Peter', age: 24 },
-	{ name: 'Alice', age: 25 },
-	{ name: 'Sam', age: 26 },
-	{ name: 'Max', age: 27 },
-	{ name: 'Kate', age: 28 },
-]
 Array.prototype.concatImpl = function (arr) {
 	const newArr = this.slice()
 	newArr.push(...arr)
@@ -60,7 +35,6 @@ function concat(arrPrv, arr) {
 ```
 ## Array Prototype copywithin
 ```
-const languages = ['JavaScript[0]', 'Python[1]', 'Ruby[2]', 'Java[3]', 'C++[4]']
 function copyWithin(array, target, start, end) {
 	let shift = target - start
 	if (shift < 0) {
@@ -78,17 +52,6 @@ function copyWithin(array, target, start, end) {
 ```
 ## Array Prototype every
 ```
-const peoples = [
-	{ name: 'John', age: 20 },
-	{ name: 'Jane', age: 21 },
-	{ name: 'Bob', age: 22 },
-	{ name: 'Mary', age: 23 },
-	{ name: 'Peter', age: 24 },
-	{ name: 'Alice', age: 25 },
-	{ name: 'Sam', age: 26 },
-	{ name: 'Max', age: 27 },
-	{ name: 'Kate', age: 28 },
-]
 Array.prototype.everyImpl = function (callback) {
 	for (let i = 0; i < this.length; i++) {
 		if (!callback(this[i], i, this)) {
@@ -100,17 +63,6 @@ Array.prototype.everyImpl = function (callback) {
 ```
 ## Array Prototype fill
 ```
-const peoples = [
-	{ name: 'John', age: 20 },
-	{ name: 'Jane', age: 21 },
-	{ name: 'Bob', age: 22 },
-	{ name: 'Mary', age: 23 },
-	{ name: 'Peter', age: 24 },
-	{ name: 'Alice', age: 25 },
-	{ name: 'Sam', age: 26 },
-	{ name: 'Max', age: 27 },
-	{ name: 'Kate', age: 28 },
-]
 Array.prototype.fillImpl = function (value, start, end) {
 	start = start || 0
 	end = end || this.length
@@ -121,17 +73,6 @@ Array.prototype.fillImpl = function (value, start, end) {
 ```
 ## Array Prototype filter
 ```
-const peoples = [
-	{ name: 'John', age: 20 },
-	{ name: 'Jane', age: 21 },
-	{ name: 'Bob', age: 22 },
-	{ name: 'Mary', age: 23 },
-	{ name: 'Peter', age: 24 },
-	{ name: 'Alice', age: 25 },
-	{ name: 'Sam', age: 26 },
-	{ name: 'Max', age: 27 },
-	{ name: 'Kate', age: 28 },
-]
 Array.prototype.filterImpl = function (callback) {
 	const result = []
 	for (let i = 0; i < this.length; i++) {
@@ -144,17 +85,6 @@ Array.prototype.filterImpl = function (callback) {
 ```
 ## Array Prototype find
 ```
-const peoples = [
-	{ name: 'John', age: 20 },
-	{ name: 'Jane', age: 21 },
-	{ name: 'Bob', age: 22 },
-	{ name: 'Mary', age: 23 },
-	{ name: 'Peter', age: 24 },
-	{ name: 'Alice', age: 25 },
-	{ name: 'Sam', age: 26 },
-	{ name: 'Max', age: 27 },
-	{ name: 'Kate', age: 28 },
-]
 Array.prototype.findImpl = function (callback) {
 	for (let i = 0; i < this.length; i++) {
 		if (callback(this[i])) {
@@ -166,17 +96,6 @@ Array.prototype.findImpl = function (callback) {
 ```
 ## Array Prototype findLast
 ```
-const peoples = [
-	{ name: 'John', age: 20 },
-	{ name: 'Jane', age: 21 },
-	{ name: 'Bob', age: 22 },
-	{ name: 'Mary', age: 23 },
-	{ name: 'Peter', age: 24 },
-	{ name: 'Alice', age: 25 },
-	{ name: 'Sam', age: 26 },
-	{ name: 'Max', age: 27 },
-	{ name: 'Kate', age: 28 },
-]
 Array.prototype.findLastImpl = function (callback) {
 	let index = this.length - 1
 	while (index >= 0) {
@@ -187,11 +106,9 @@ Array.prototype.findLastImpl = function (callback) {
 	}
 	return undefined
 }
-
 ```
 ## Array Prototype flat
 ```
-const arr1 = [0, 1, 2, [3, 4]]
 Array.prototype.flatImpl = function (depth = 1) {
 	const result = []
 	for (let i = 0; i < this.length; i++) {
@@ -204,22 +121,17 @@ Array.prototype.flatImpl = function (depth = 1) {
 	}
 	return result
 }
-
 ```
 ## Array Prototype forEach
 ```
-const arr1 = [0, 1, 2, 3, 4]
 Array.prototype.forEachImpl = function (callback) {
 	for (let i = 0; i < this.length; i++) {
 		callback(this[i], i, this)
 	}
 }
-
 ```
 ## Array Prototype includes
 ```
-const arr1 = [0, 1, 2, 3, 4]
-
 Array.prototype.includesImpl = function (value) {
 	for (let i = 0; i < this.length; i++) {
 		if (this[i] === value) {
@@ -228,13 +140,9 @@ Array.prototype.includesImpl = function (value) {
 	}
 	return false
 }
-
-
 ```
 ## Array Prototype indexOf
 ```
-const arr1 = [0, 1, 2, 3, 4]
-
 Array.prototype.indexOfImpl = function (value) {
 	for (let i = 0; i < this.length; i++) {
 		if (this[i] === value) {
@@ -243,13 +151,9 @@ Array.prototype.indexOfImpl = function (value) {
 	}
 	return -1
 }
-
-
 ```
 ## Array Prototype join
 ```
-const arr1 = [0, 1, 2, 3, 4]
-
 Array.prototype.joinImpl = function (separator) {
 	const arr = this
 	let str = ''
@@ -261,13 +165,9 @@ Array.prototype.joinImpl = function (separator) {
 	}
 	return str
 }
-
-
 ```
 ## Array Prototype lastIndexOf
 ```
-const arr = [0, 1, 2, 3, 4, 2]
-
 Array.prototype.lastIndexOfImpl = function (value) {
 	for (let i = this.length - 1; i >= 0; i--) {
 		if (this[i] === value) {
@@ -276,12 +176,9 @@ Array.prototype.lastIndexOfImpl = function (value) {
 	}
 	return -1
 }
-
 ```
 ## Array Prototype map
 ```
-const arr = [0, 1, 2, 3, 4, 2]
-
 Array.prototype.mapImpl = function (fn) {
 	const result = []
 	for (let i = 0; i < this.length; i++) {
@@ -289,5 +186,4 @@ Array.prototype.mapImpl = function (fn) {
 	}
 	return result
 }
-
 ```
