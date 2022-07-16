@@ -8,6 +8,12 @@
   - [Array Prototype find](#array-prototype-find)
   - [Array Prototype findLast](#array-prototype-findLast)
   - [Array Prototype flat](#array-prototype-flat)
+  - [Array Prototype forEach](#array-prototype-forEach)
+  - [Array Prototype includes](#array-prototype-includes)
+  - [Array Prototype indexOf](#array-prototype-indexOf)
+  - [Array Prototype join](#array-prototype-join)
+  - [Array Prototype lastIndexOf](#array-prototype-lastIndexOf)
+  - [Array Prototype map](#array-prototype-map)
 ## Array Prototype at
 ```
 const peoples = [
@@ -195,6 +201,91 @@ Array.prototype.flatImpl = function (depth = 1) {
 		} else {
 			result.push(item)
 		}
+	}
+	return result
+}
+
+```
+## Array Prototype forEach
+```
+const arr1 = [0, 1, 2, 3, 4]
+Array.prototype.forEachImpl = function (callback) {
+	for (let i = 0; i < this.length; i++) {
+		callback(this[i], i, this)
+	}
+}
+
+```
+## Array Prototype includes
+```
+const arr1 = [0, 1, 2, 3, 4]
+
+Array.prototype.includesImpl = function (value) {
+	for (let i = 0; i < this.length; i++) {
+		if (this[i] === value) {
+			return true
+		}
+	}
+	return false
+}
+
+
+```
+## Array Prototype indexOf
+```
+const arr1 = [0, 1, 2, 3, 4]
+
+Array.prototype.indexOfImpl = function (value) {
+	for (let i = 0; i < this.length; i++) {
+		if (this[i] === value) {
+			return i
+		}
+	}
+	return -1
+}
+
+
+```
+## Array Prototype join
+```
+const arr1 = [0, 1, 2, 3, 4]
+
+Array.prototype.joinImpl = function (separator) {
+	const arr = this
+	let str = ''
+	for (let i = 0; i < arr.length; i++) {
+		str += arr[i]
+		if (i < arr.length - 1) {
+			str += separator
+		}
+	}
+	return str
+}
+
+
+```
+## Array Prototype lastIndexOf
+```
+const arr = [0, 1, 2, 3, 4, 2]
+
+Array.prototype.lastIndexOfImpl = function (value) {
+	for (let i = this.length - 1; i >= 0; i--) {
+		if (this[i] === value) {
+			return i
+		}
+	}
+	return -1
+}
+
+```
+## Array Prototype map
+```
+const arr = [0, 1, 2, 3, 4, 2]
+
+Array.prototype.mapImpl = function (fn) {
+	const result = []
+	for (let i = 0; i < this.length; i++) {
+		result.push(fn(this[i]))
 	}
 	return result
 }
