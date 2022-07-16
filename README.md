@@ -1,5 +1,8 @@
-
-## Array.prototype.at()
+## Table of Contents
+  - [Array Prototype at](#array-prototype-at)
+  - [Array Prototype concat](#array-prototype-concat)
+  - [Array Prototype copywithin](#array-prototype-copywithin)
+## Array Prototype at
 ```
 const peoples = [
 	{ name: 'John', age: 20 },
@@ -12,19 +15,15 @@ const peoples = [
 	{ name: 'Max', age: 27 },
 	{ name: 'Kate', age: 28 },
 ]
-
 Array.prototype.atImpl = function (index) {
 	return this[index]
 }
 const At = (array, index) => {
 	return array[index]
 }
-
 ```
-
-## Array.prototype.concat()
+## Array Prototype concat
 ```
-
 const peoples = [
 	{ name: 'John', age: 20 },
 	{ name: 'Jane', age: 21 },
@@ -46,13 +45,10 @@ function concat(arrPrv, arr) {
 	newArr.push(...arr)
 	return newArr
 }
-
 ```
-
-## Array.prototype.copyWithin()
+## Array Prototype copywithin
 ```
 const languages = ['JavaScript[0]', 'Python[1]', 'Ruby[2]', 'Java[3]', 'C++[4]']
-
 function copyWithin(array, target, start, end) {
 	let shift = target - start
 	if (shift < 0) {
@@ -67,9 +63,7 @@ function copyWithin(array, target, start, end) {
 	}
 	return array
 }
-
 ```
-
 ## Array.prototype.every()
 ```
 const peoples = [
@@ -83,7 +77,6 @@ const peoples = [
 	{ name: 'Max', age: 27 },
 	{ name: 'Kate', age: 28 },
 ]
-
 Array.prototype.everyImpl = function (callback) {
 	for (let i = 0; i < this.length; i++) {
 		if (!callback(this[i], i, this)) {
@@ -92,9 +85,7 @@ Array.prototype.everyImpl = function (callback) {
 	}
 	return true
 }
-
 ```
-
 ## Array.prototype.fill()
 ```
 const peoples = [
@@ -138,7 +129,6 @@ Array.prototype.filterImpl = function (callback) {
 	}
 	return result
 }
-
 ```
 ## Array.prototype.find()
 ```
@@ -161,6 +151,4 @@ Array.prototype.findImpl = function (callback) {
 	}
 	return undefined
 }
-
-
 ```
