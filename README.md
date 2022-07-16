@@ -27,11 +27,6 @@ Array.prototype.concatImpl = function (arr) {
 	newArr.push(...arr)
 	return newArr
 }
-function concat(arrPrv, arr) {
-	const newArr = arrPrv
-	newArr.push(...arr)
-	return newArr
-}
 ```
 ## Array Prototype copywithin
 ```
