@@ -9,12 +9,11 @@ const peoples = [
 	{ name: 'Max', age: 27 },
 	{ name: 'Kate', age: 28 },
 ]
-Array.prototype.filterImpl = function (callback) {
-	const result = []
+Array.prototype.findImpl = function (callback) {
 	for (let i = 0; i < this.length; i++) {
-		if (callback(this[i], i, this)) {
-			result.push(this[i])
+		if (callback(this[i])) {
+			return this[i]
 		}
 	}
-	return result
+	return undefined
 }
