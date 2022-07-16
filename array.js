@@ -9,3 +9,9 @@ const peoples = [
 	{ name: 'Max', age: 27 },
 	{ name: 'Kate', age: 28 },
 ]
+
+Array.prototype.copyWithin = function (target, start, end) {
+	const arr = this.slice(start, end)
+	this.splice(target, 0, ...arr)
+	return this
+}
