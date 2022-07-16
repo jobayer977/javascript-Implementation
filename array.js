@@ -9,11 +9,11 @@ const peoples = [
 	{ name: 'Max', age: 27 },
 	{ name: 'Kate', age: 28 },
 ]
-Array.prototype.findImpl = function (callback) {
+Array.prototype.findIndexImpl = function (callback) {
 	for (let i = 0; i < this.length; i++) {
 		if (callback(this[i])) {
-			return this[i]
+			return i
 		}
 	}
-	return undefined
+	return -1
 }

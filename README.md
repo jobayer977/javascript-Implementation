@@ -2,6 +2,10 @@
   - [Array Prototype at](#array-prototype-at)
   - [Array Prototype concat](#array-prototype-concat)
   - [Array Prototype copywithin](#array-prototype-copywithin)
+  - [Array Prototype every](#array-prototype-every)
+  - [Array Prototype fill](#array-prototype-fill)
+  - [Array Prototype filter](#array-prototype-filter)
+  - [Array Prototype find](#array-prototype-find)
 ## Array Prototype at
 ```
 const peoples = [
@@ -64,7 +68,7 @@ function copyWithin(array, target, start, end) {
 	return array
 }
 ```
-## Array.prototype.every()
+## Array Prototype every
 ```
 const peoples = [
 	{ name: 'John', age: 20 },
@@ -86,7 +90,7 @@ Array.prototype.everyImpl = function (callback) {
 	return true
 }
 ```
-## Array.prototype.fill()
+## Array Prototype fill
 ```
 const peoples = [
 	{ name: 'John', age: 20 },
@@ -107,7 +111,7 @@ Array.prototype.fillImpl = function (value, start, end) {
 	}
 }
 ```
-## Array.prototype.filter()
+## Array Prototype filter
 ```
 const peoples = [
 	{ name: 'John', age: 20 },
@@ -130,7 +134,7 @@ Array.prototype.filterImpl = function (callback) {
 	return result
 }
 ```
-## Array.prototype.find()
+## Array Prototype find
 ```
 const peoples = [
 	{ name: 'John', age: 20 },
