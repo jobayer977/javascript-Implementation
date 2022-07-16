@@ -1,3 +1,5 @@
+#### These JavaScript methods of arrays have been re-arranged to make them simply explain how actually things are working.
+
 ## Table of Contents
   - [Array Prototype at](#array-prototype-at)
   - [Array Prototype concat](#array-prototype-concat)
