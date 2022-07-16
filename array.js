@@ -9,11 +9,13 @@ const peoples = [
 	{ name: 'Max', age: 27 },
 	{ name: 'Kate', age: 28 },
 ]
-Array.prototype.findIndexImpl = function (callback) {
-	for (let i = 0; i < this.length; i++) {
-		if (callback(this[i])) {
-			return i
+Array.prototype.findLastImpl = function (callback) {
+	let index = this.length - 1
+	while (index >= 0) {
+		if (callback(this[index])) {
+			return this[index]
 		}
+		index--
 	}
-	return -1
+	return undefined
 }
