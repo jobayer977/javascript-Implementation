@@ -14,6 +14,11 @@
   - [Array Prototype join](#array-prototype-join)
   - [Array Prototype lastIndexOf](#array-prototype-lastIndexOf)
   - [Array Prototype map](#array-prototype-map)
+  - [Array Prototype pop](#array-prototype-pop)
+  - [Array Prototype push](#array-prototype-push)
+  - [Array Prototype reduce](#array-prototype-reduce)
+  - [Array Prototype reverse](#array-prototype-reverse)
+  - [Array Prototype shift](#array-prototype-shift)
 ## Array Prototype at
 ```
 Array.prototype.atImpl = function (index) {
@@ -180,5 +185,58 @@ Array.prototype.mapImpl = function (fn) {
 		result.push(fn(this[i]))
 	}
 	return result
+}
+```
+## Array Prototype pop
+```
+Array.prototype.popImpl = function () {
+	const last = this[this.length - 1]
+	this.length--
+	return last
+}
+```
+## Array Prototype push
+```
+Array.prototype.pushImpl = function (...args) {
+	for (let i = 0; i < args.length; i++) {
+		this[this.length] = args[i]
+	}
+	return this.length
+}
+```
+## Array Prototype reduce
+```
+Array.prototype.reduceImpl = function (callback, initialValue) {
+	let accumulator = initialValue
+	for (let i = 0; i < this.length; i++) {
+		accumulator = callback(accumulator, this[i], i, this)
+	}
+	return accumulator
+}
+
+```
+## Array Prototype reverse
+```
+Array.prototype.reverseImpl = function () {
+	let arr = this
+	let result = []
+	for (let i = arr.length - 1; i >= 0; i--) {
+		result.push(arr[i])
+	}
+	return result
+}
+```
+## Array Prototype shift
+```
+Array.prototype.shiftImpl = function () {
+	if (this.length === 0) {
+		return []
+	}
+	const first = this[0]
+	for (let i = 0; i < this.length - 1; i++) {
+		this[i] = this[i + 1]
+	}
+	this.length--
+	return first
 }
 ```
