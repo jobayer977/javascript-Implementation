@@ -1,11 +1,7 @@
-const arr = ['Java', 'C++', 'PHP']
-
-Array.prototype.sliceImpl = function (start = 0, end = this.length) {
-	let arr = []
-	for (let i = 0; i < this.length; i++) {
-		if (start <= i && end >= i) {
-			arr.push(this[i])
-		}
+const arr = ['Java', 'C++', 'PHP', 'Angular']
+Array.prototype.unshiftImpl = function (...args) {
+	for (let i = 0; i < args.length; i++) {
+		this.splice(i, 0, args[i])
 	}
-	return arr
+	return this.length
 }

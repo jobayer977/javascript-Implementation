@@ -20,6 +20,8 @@
   - [Array Prototype reverse](#array-prototype-reverse)
   - [Array Prototype shift](#array-prototype-shift)
   - [Array Prototype slice](#array-prototype-slice)
+  - [Array Prototype some](#array-prototype-some)
+  - [Array Prototype unshift](#array-prototype-unshift)
 ## Array Prototype at
 ```
 Array.prototype.atImpl = function (index) {
@@ -252,4 +254,31 @@ Array.prototype.sliceImpl = function (start = 0, end = this.length) {
 	}
 	return arr
 }
+```
+## Array Prototype some
+```
+Array.prototype.someImpl = function (callback) {
+	let passed = false
+	for (let i = 0; i < this.length; i++) {
+		if (callback && callback(this[i], i, this)) {
+			passed = true
+			break
+		} else {
+			passed = false
+		}
+	}
+	return passed
+}
+
+```
+## Array Prototype unshift
+```
+Array.prototype.unshiftImpl = function (...args) {
+	for (let i = 0; i < args.length; i++) {
+		this.splice(i, 0, args[i])
+	}
+	return this.length
+}
+
+
 ```
