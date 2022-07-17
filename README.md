@@ -25,6 +25,9 @@
     - [Array Prototype slice](#array-prototype-slice)
     - [Array Prototype some](#array-prototype-some)
     - [Array Prototype unshift](#array-prototype-unshift)
+	- [Array Prototype unshift](#array-prototype-unshift)
+  - [Data Structures](#data-structures)
+    - [Stack](#Stack)
 ## Array
 ### Array Prototype at
 ```
@@ -282,6 +285,32 @@ Array.prototype.unshiftImpl = function (...args) {
 		this.splice(i, 0, args[i])
 	}
 	return this.length
+}
+
+
+```
+## Data Structures
+### Stack
+```
+class Stack {
+	constructor() {
+		this.items = []
+	}
+	push(item) {
+		this.items.push(item)
+	}
+	pop() {
+		return this.items.pop()
+	}
+	peek() {
+		return this.items[this.items.length - 1]
+	}
+	isEmpty() {
+		return this.items.length === 0
+	}
+	clear() {
+		this.items = []
+	}
 }
 
 
