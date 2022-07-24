@@ -1,41 +1,49 @@
 ### These JavaScript methods of arrays have been re-arranged to make them simply explain how actually things are working.
 
 ## Table of Contents
-  - [Array](#array)
-    - [Array Prototype at](#array-prototype-at)
-    - [Array Prototype concat](#array-prototype-concat)
-    - [Array Prototype copywithin](#array-prototype-copywithin)
-    - [Array Prototype every](#array-prototype-every)
-    - [Array Prototype fill](#array-prototype-fill)
-    - [Array Prototype filter](#array-prototype-filter)
-    - [Array Prototype find](#array-prototype-find)
-    - [Array Prototype findLast](#array-prototype-findlast)
-    - [Array Prototype flat](#array-prototype-flat)
-    - [Array Prototype forEach](#array-prototype-foreach)
-    - [Array Prototype includes](#array-prototype-includes)
-    - [Array Prototype indexOf](#array-prototype-indexof)
-    - [Array Prototype join](#array-prototype-join)
-    - [Array Prototype lastIndexOf](#array-prototype-lastindexof)
-    - [Array Prototype map](#array-prototype-map)
-    - [Array Prototype pop](#array-prototype-pop)
-    - [Array Prototype push](#array-prototype-push)
-    - [Array Prototype reduce](#array-prototype-reduce)
-    - [Array Prototype reverse](#array-prototype-reverse)
-    - [Array Prototype shift](#array-prototype-shift)
-    - [Array Prototype slice](#array-prototype-slice)
-    - [Array Prototype some](#array-prototype-some)
-    - [Array Prototype unshift](#array-prototype-unshift)
-	- [Array Prototype unshift](#array-prototype-unshift)
-  - [Data Structures](#data-structures)
-    - [Stack](#Stack)
+
+- [Array](#array)
+  - [Array Prototype at](#array-prototype-at)
+  - [Array Prototype concat](#array-prototype-concat)
+  - [Array Prototype copywithin](#array-prototype-copywithin)
+  - [Array Prototype every](#array-prototype-every)
+  - [Array Prototype fill](#array-prototype-fill)
+  - [Array Prototype filter](#array-prototype-filter)
+  - [Array Prototype find](#array-prototype-find)
+  - [Array Prototype findLast](#array-prototype-findlast)
+  - [Array Prototype flat](#array-prototype-flat)
+  - [Array Prototype forEach](#array-prototype-foreach)
+  - [Array Prototype includes](#array-prototype-includes)
+  - [Array Prototype indexOf](#array-prototype-indexof)
+  - [Array Prototype join](#array-prototype-join)
+  - [Array Prototype lastIndexOf](#array-prototype-lastindexof)
+  - [Array Prototype map](#array-prototype-map)
+  - [Array Prototype pop](#array-prototype-pop)
+  - [Array Prototype push](#array-prototype-push)
+  - [Array Prototype reduce](#array-prototype-reduce)
+  - [Array Prototype reverse](#array-prototype-reverse)
+  - [Array Prototype shift](#array-prototype-shift)
+  - [Array Prototype slice](#array-prototype-slice)
+  - [Array Prototype some](#array-prototype-some)
+  - [Array Prototype unshift](#array-prototype-unshift)
+  - [Array Prototype unshift](#array-prototype-unshift)
+- [Decorators](#decorators)
+  - [Debounce](#debounce)
+- [Data Structures](#data-structures)
+  - [Stack](#Stack)
+
 ## Array
+
 ### Array Prototype at
+
 ```
 Array.prototype.atImpl = function (index) {
 	return this[index]
 }
 ```
+
 ### Array Prototype concat
+
 ```
 Array.prototype.concatImpl = function (arr) {
 	const newArr = this.slice()
@@ -43,7 +51,9 @@ Array.prototype.concatImpl = function (arr) {
 	return newArr
 }
 ```
+
 ### Array Prototype copywithin
+
 ```
 function copyWithin(array, target, start, end) {
 	let shift = target - start
@@ -60,7 +70,9 @@ function copyWithin(array, target, start, end) {
 	return array
 }
 ```
+
 ### Array Prototype every
+
 ```
 Array.prototype.everyImpl = function (callback) {
 	for (let i = 0; i < this.length; i++) {
@@ -71,7 +83,9 @@ Array.prototype.everyImpl = function (callback) {
 	return true
 }
 ```
+
 ### Array Prototype fill
+
 ```
 Array.prototype.fillImpl = function (value, start, end) {
 	start = start || 0
@@ -81,7 +95,9 @@ Array.prototype.fillImpl = function (value, start, end) {
 	}
 }
 ```
+
 ### Array Prototype filter
+
 ```
 Array.prototype.filterImpl = function (callback) {
 	const result = []
@@ -93,7 +109,9 @@ Array.prototype.filterImpl = function (callback) {
 	return result
 }
 ```
+
 ### Array Prototype find
+
 ```
 Array.prototype.findImpl = function (callback) {
 	for (let i = 0; i < this.length; i++) {
@@ -104,7 +122,9 @@ Array.prototype.findImpl = function (callback) {
 	return undefined
 }
 ```
+
 ### Array Prototype findLast
+
 ```
 Array.prototype.findLastImpl = function (callback) {
 	let index = this.length - 1
@@ -117,7 +137,9 @@ Array.prototype.findLastImpl = function (callback) {
 	return undefined
 }
 ```
+
 ### Array Prototype flat
+
 ```
 Array.prototype.flatImpl = function (depth = 1) {
 	const result = []
@@ -132,7 +154,9 @@ Array.prototype.flatImpl = function (depth = 1) {
 	return result
 }
 ```
+
 ### Array Prototype forEach
+
 ```
 Array.prototype.forEachImpl = function (callback) {
 	for (let i = 0; i < this.length; i++) {
@@ -140,7 +164,9 @@ Array.prototype.forEachImpl = function (callback) {
 	}
 }
 ```
+
 ### Array Prototype includes
+
 ```
 Array.prototype.includesImpl = function (value) {
 	for (let i = 0; i < this.length; i++) {
@@ -151,7 +177,9 @@ Array.prototype.includesImpl = function (value) {
 	return false
 }
 ```
+
 ### Array Prototype indexOf
+
 ```
 Array.prototype.indexOfImpl = function (value) {
 	for (let i = 0; i < this.length; i++) {
@@ -162,7 +190,9 @@ Array.prototype.indexOfImpl = function (value) {
 	return -1
 }
 ```
+
 ### Array Prototype join
+
 ```
 Array.prototype.joinImpl = function (separator) {
 	const arr = this
@@ -176,7 +206,9 @@ Array.prototype.joinImpl = function (separator) {
 	return str
 }
 ```
+
 ### Array Prototype lastIndexOf
+
 ```
 Array.prototype.lastIndexOfImpl = function (value) {
 	for (let i = this.length - 1; i >= 0; i--) {
@@ -187,7 +219,9 @@ Array.prototype.lastIndexOfImpl = function (value) {
 	return -1
 }
 ```
+
 ### Array Prototype map
+
 ```
 Array.prototype.mapImpl = function (fn) {
 	const result = []
@@ -197,7 +231,9 @@ Array.prototype.mapImpl = function (fn) {
 	return result
 }
 ```
+
 ### Array Prototype pop
+
 ```
 Array.prototype.popImpl = function () {
 	const last = this[this.length - 1]
@@ -205,7 +241,9 @@ Array.prototype.popImpl = function () {
 	return last
 }
 ```
+
 ### Array Prototype push
+
 ```
 Array.prototype.pushImpl = function (...args) {
 	for (let i = 0; i < args.length; i++) {
@@ -214,7 +252,9 @@ Array.prototype.pushImpl = function (...args) {
 	return this.length
 }
 ```
+
 ### Array Prototype reduce
+
 ```
 Array.prototype.reduceImpl = function (callback, initialValue) {
 	let accumulator = initialValue
@@ -225,7 +265,9 @@ Array.prototype.reduceImpl = function (callback, initialValue) {
 }
 
 ```
+
 ### Array Prototype reverse
+
 ```
 Array.prototype.reverseImpl = function () {
 	let arr = this
@@ -236,7 +278,9 @@ Array.prototype.reverseImpl = function () {
 	return result
 }
 ```
+
 ### Array Prototype shift
+
 ```
 Array.prototype.shiftImpl = function () {
 	if (this.length === 0) {
@@ -250,7 +294,9 @@ Array.prototype.shiftImpl = function () {
 	return first
 }
 ```
+
 ### Array Prototype slice
+
 ```
 Array.prototype.sliceImpl = function (start = 0, end = this.length) {
 	let arr = []
@@ -262,7 +308,9 @@ Array.prototype.sliceImpl = function (start = 0, end = this.length) {
 	return arr
 }
 ```
+
 ### Array Prototype some
+
 ```
 Array.prototype.someImpl = function (callback) {
 	let passed = false
@@ -278,7 +326,9 @@ Array.prototype.someImpl = function (callback) {
 }
 
 ```
+
 ### Array Prototype unshift
+
 ```
 Array.prototype.unshiftImpl = function (...args) {
 	for (let i = 0; i < args.length; i++) {
@@ -289,8 +339,43 @@ Array.prototype.unshiftImpl = function (...args) {
 
 
 ```
+
+## Decorators
+
+### Debounce
+
+```
+export function debounce(delay: number) {
+	return function (
+		target: any,
+		propertyKey: string,
+		descriptor: PropertyDescriptor
+	) {
+		const originalMethod = descriptor.value
+		let debounceTimer: any
+		descriptor.value = function (...args: any[]) {
+			if (debounceTimer) {
+				clearTimeout(debounceTimer)
+			}
+			debounceTimer = setTimeout(() => originalMethod.apply(this, args), delay)
+		}
+	}
+}
+class Example {
+	@debounce(1000)
+	doSomething() {
+		console.log("do something")
+	}
+}
+const example = new Example()
+example.doSomething()
+
+```
+
 ## Data Structures
+
 ### Stack
+
 ```
 class Stack {
 	constructor() {
